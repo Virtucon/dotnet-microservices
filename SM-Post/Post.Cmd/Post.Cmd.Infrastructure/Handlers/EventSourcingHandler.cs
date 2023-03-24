@@ -13,7 +13,7 @@ namespace Post.Cmd.Infrastructure.Handlers
             _eventStore = eventStore;
         }
 
-        public async Task<PostAggregate> GetAsync(Guid aggregateId)
+        public async Task<PostAggregate> GetByIdAsync(Guid aggregateId)
         {
             var aggregate = new PostAggregate();
             var events = await _eventStore.GetEventsAsync(aggregateId);
